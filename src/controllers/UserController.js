@@ -5,6 +5,7 @@ class UserController {
     try {
       const novoUser = await User.create(req.body);
       const { id, nome, email } = novoUser;
+
       return res.json({ id, nome, email });
     } catch (e) {
       return res.status(401).json({
@@ -42,7 +43,7 @@ class UserController {
 
       if (!user) {
         return res.status(400).json({
-          errors: ['User not found'],
+          errors: ['Usuário não encontrado'],
         });
       }
 

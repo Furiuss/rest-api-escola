@@ -15,13 +15,13 @@ class TokenController {
 
     if (!user) {
       return res.status(401).json({
-        errors: ['User not found'],
+        errors: ['Usuário não encontrado'],
       });
     }
 
     if (!(await user.passwordIsValid(password))) {
       return res.status(401).json({
-        errors: ['Password is invalid'],
+        errors: ['Senha inválida'],
       });
     }
 
